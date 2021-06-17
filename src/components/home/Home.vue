@@ -1,11 +1,6 @@
 <template>
   <div id="home">
-    <header>
-      <div class="title">武汉交警警企共建平台</div>
-      <div class="timeBox">
-        <span>{{ nowDate }}</span>
-      </div>
-    </header>
+    <Head></Head>
     <div class="content">
       <div class="leftBox">
         <div class="showContent">
@@ -56,21 +51,21 @@
           <div class="contentDetail">展示内容</div>
         </div>
       </div>
-      <div class="lineEcharts"></div>
     </div>
   </div>
 </template>
 
 <script>
 import echartConfig from "./echart.js";
-
+import Head from "../header.vue";
 export default {
+  components: {
+    Head,
+  },
   data() {
     return {
       //当前的步骤
       current: 0,
-      //当前日期
-      nowDate: "",
     };
   },
   methods: {
@@ -84,8 +79,7 @@ export default {
     },
     keyPeopleEcharts() {
       let keyPeople = this.$echarts.init(
-        document.getElementsByClassName("keyPeopleEcharts")[0],
-        "infographic"
+        document.getElementsByClassName("keyPeopleEcharts")[0]
       );
       keyPeople.setOption(echartConfig.colorShow);
       keyPeople.setOption({ title: { text: "新标题" } });
@@ -98,27 +92,8 @@ export default {
       );
       lineEcharts.setOption(echartConfig.line);
     },
-
-    currentTime() {
-      setInterval(this.formatDate, 500);
-    },
-    formatDate() {
-      let date = new Date();
-      let year = date.getFullYear(); // 年
-      let month = date.getMonth() + 1; // 月
-      let day = date.getDate(); // 日
-      // let week = date.getDay(); // 星期
-      let hour = date.getHours(); // 时
-      hour = hour < 10 ? "0" + hour : hour; // 如果只有一位，则前面补零
-      let minute = date.getMinutes(); // 分
-      minute = minute < 10 ? "0" + minute : minute; // 如果只有一位，则前面补零
-      let second = date.getSeconds(); // 秒
-      second = second < 10 ? "0" + second : second; // 如果只有一位，则前面补零
-      this.nowDate = `${year}/${month}/${day} ${hour}:${minute}:${second}`;
-    },
   },
   mounted() {
-    this.currentTime();
     console.log("options", echartConfig);
     // this.lineEcharts();
     this.keyPeopleEcharts();

@@ -1,0 +1,53 @@
+#user{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: no-repeat url(../img/12.png) center;
+    background-size:cover;
+    border:1px solid #333;
+    .header{
+        width: 100%;
+        height: 60px;
+        // background-color: pink;
+        line-height: 60px;
+        .searchBox{
+            height: 40px;
+            padding: 0 20px;
+            box-sizing: border-box;
+            /deep/.ivu-form{
+                height: 100%;
+            }
+        }
+    }
+    section{
+        .tableBox{
+            width: 98%;
+            margin: 0 auto;
+            // /deep/.ivu-table{
+            //     width: 98%;
+            //     margin: 0 auto;
+            // }
+            /deep/ .ivu-table td{
+                background-color: rgba(15, 91, 125, 1)!important;
+                color: #fff;
+            }
+            /deep/ .ivu-table thead tr th{ 
+                background-color: rgba(15, 91, 125, 1)!important;
+                color: #fff;
+            }
+        }
+    }
+    footer{
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background-color: #333333;
+        line-height: 60px;
+        .footerWrap{
+            float: right;
+            margin-right: 100px;
+        }
+    }
+}

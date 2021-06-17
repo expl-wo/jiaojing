@@ -1,39 +1,24 @@
 #home{
     color:#fff;
-    header{
-        height: 50px;
-        font-weight: bolder;
-        font-size: 20px;
-        background-color: green;
-        line-height: 50px;
-        .title{
-            float: left;
-            margin-left: 20px;
-        }
-        .timeBox{
-            float: right;
-            margin-right: 20px;
-        }
-    }
+    overflow: hidden;
+    
     .content{
         width: 100%;
         background-color: #cc85d9;
         position: absolute;
-        top: 50px;
+        top: 60px;
         bottom: 0px;
         left: 0px;
-        >div{
-            width: 30%;
-            float: left;
-            height: 100%;
-        }
-        
+        box-sizing: border-box;
         .leftBox{
-            width: 30%;
+            width: 24%;
+            height: 100%;
+            float: left;
             background-color: yellowgreen;
             .showContent{
-                margin:0 0 20px 20px;
-                height: 20%;
+                margin:0 0 10px 20px;
+                box-sizing: border-box;
+                height: 18%;
                 .title{
                     font-size: 18px;
                     font-weight: bolder;
@@ -44,7 +29,9 @@
             }
         }
         .middleBox{
-            width: 40%;
+            width: 52%;
+            height: 100%;
+            float: left;
             background-color: greenyellow;
             .topBox{
                 height: 40%;
@@ -53,24 +40,27 @@
             .bottomBox{
                 height: 60%;
                 background-color: aquamarine;
-            }
-            .keyPeopleEcharts{
-                width: 500px;
-                height: 400px;
-                // margin-left: 33px;
-                // margin-top: 37px;
-                box-sizing: border-box;
-            }
-            .lineEcharts{
-                width: 800px;
-                height: 400px;
-                // margin-left: 33px;
-                // margin-top: 37px;
-                box-sizing: border-box;
+                .keyPeopleEcharts{
+                    width: 80%;
+                    height: 400px;
+                    margin: 0 auto;
+                    // margin-left: 33px;
+                    // margin-top: 37px;
+                    box-sizing: border-box;
+                }
+                .lineEcharts{
+                    width: 200px;
+                    height: 200px;
+                    // margin-left: 33px;
+                    // margin-top: 37px;
+                    box-sizing: border-box;
+                }
             }
         }
         .rightBox{
-            width: 30%;
+            width: 24%;
+            float: left;
+            height: 100%;
             background-color: aqua;
             .showContent{
                 margin:0 0 20px 20px;
