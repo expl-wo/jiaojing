@@ -1,0 +1,89 @@
+#home{
+    color:#fff;
+    header{
+        height: 50px;
+        font-weight: bolder;
+        font-size: 20px;
+        background-color: green;
+        line-height: 50px;
+        .title{
+            float: left;
+            margin-left: 20px;
+        }
+        .timeBox{
+            float: right;
+            margin-right: 20px;
+        }
+    }
+    .content{
+        width: 100%;
+        background-color: #cc85d9;
+        position: absolute;
+        top: 50px;
+        bottom: 0px;
+        left: 0px;
+        >div{
+            width: 30%;
+            float: left;
+            height: 100%;
+        }
+        
+        .leftBox{
+            width: 30%;
+            background-color: yellowgreen;
+            .showContent{
+                margin:0 0 20px 20px;
+                height: 20%;
+                .title{
+                    font-size: 18px;
+                    font-weight: bolder;
+                }
+            }
+            .showContent:nth-child(1){
+                margin-top: 30px;
+            }
+        }
+        .middleBox{
+            width: 40%;
+            background-color: greenyellow;
+            .topBox{
+                height: 40%;
+                background-color: #cc85d9;
+            }
+            .bottomBox{
+                height: 60%;
+                background-color: aquamarine;
+            }
+            .keyPeopleEcharts{
+                width: 500px;
+                height: 400px;
+                // margin-left: 33px;
+                // margin-top: 37px;
+                box-sizing: border-box;
+            }
+            .lineEcharts{
+                width: 800px;
+                height: 400px;
+                // margin-left: 33px;
+                // margin-top: 37px;
+                box-sizing: border-box;
+            }
+        }
+        .rightBox{
+            width: 30%;
+            background-color: aqua;
+            .showContent{
+                margin:0 0 20px 20px;
+                height: 25%;
+                .title{
+                    font-size: 18px;
+                    font-weight: bolder;
+                }
+            }
+            .showContent:nth-child(1){
+                margin-top: 30px;
+            }
+        }
+       
+    }
+}
