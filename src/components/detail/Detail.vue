@@ -1,7 +1,7 @@
 <template>
   <div id="detail">
     <Head></Head>
-    <h2>detail</h2>
+    <h2>码图</h2>
   </div>
 </template>
 
