@@ -14,20 +14,20 @@
             </FormItem>
             <FormItem prop="password">
               <Input
-                v-model="value"
+                v-model="formInline.value1"
                 placeholder="身份证"
                 style="width: 250px"
               />
             </FormItem>
             <FormItem prop="password">
               <Input
-                v-model="value"
+                v-model="formInline.value1"
                 placeholder="联系方式"
                 style="width: 200px"
               />
             </FormItem>
             <FormItem prop="password">
-              <Select v-model="model1" style="width: 100px" placeholder='骑手类型'>
+              <Select v-model="formInline.value1" style="width: 100px" placeholder='骑手类型'>
                 <Option
                   v-for="item in personTypeList"
                   :value="item.value"
@@ -38,13 +38,13 @@
             </FormItem>
             <FormItem prop="password">
               <Input
-                v-model="value"
+                v-model="formInline.value1"
                 placeholder="平台名称"
                 style="width: 180px"
               />
             </FormItem>
             <FormItem prop="password">
-              <Select v-model="model2" style="width: 120px" placeholder='码类型'>
+              <Select v-model="formInline.value1" style="width: 120px" placeholder='码类型'>
                 <Option
                   v-for="item in codeTypeList"
                   :value="item.value"
@@ -54,7 +54,7 @@
               </Select>
             </FormItem>
             <FormItem prop="password">
-             <Select v-model="model1" style="width: 120px" placeholder='宣教时间'>
+             <Select v-model="formInline.value1" style="width: 120px" placeholder='宣教时间'>
                 <Option
                   v-for="item in educationTimeList"
                   :value="item.value"
@@ -64,7 +64,7 @@
               </Select>
             </FormItem>
             <FormItem prop="password">
-              <Select v-model="model1" style="width: 120px" placeholder='宣教积分'>
+              <Select v-model="formInline.value1" style="width: 120px" placeholder='宣教积分'>
                 <Option
                   v-for="item in educationGradeList"
                   :value="item.value"
@@ -80,6 +80,9 @@
               <Button type="primary" @click="handleReset('formInline')"
                 >重置</Button
               >
+              <Button type="primary" @click="handleExport('formInline')"
+                >导出</Button
+              >
             </FormItem>
           </Form>
         </div>
@@ -87,7 +90,7 @@
     </div>
     <section>
       <div class="tableBox">
-        <Table :columns="columns1" :data="data1" height="662" border></Table>
+        <Table :columns="columns1" :data="data1" height="664"></Table>
       </div>
     </section>
     <footer>
@@ -98,17 +101,17 @@
   </div>
 </template>
 <script>
-import Head from "../header.vue";
-import tableConfig from "./tableConfig.js";
+import Head from "../header.vue"
+import tableConfig from "./tableConfig.js"
 export default {
   components: {
     Head,
   },
   mounted() {
-    console.log(tableConfig.tableDataList, tableConfig.tableHeadConfig);
+    console.log(tableConfig.tableDataList, tableConfig.tableHeadConfig)
   },
   data() {
-    let tableCon = tableConfig(this);
+    let tableCon = tableConfig(this)
     return {
       columns1: tableCon.tableHeadConfig,
       data1: tableCon.tableDataList,
@@ -173,32 +176,42 @@ export default {
           },
         ],
       },
-    };
+    }
   },
 
   methods: {
-    handleSubmit(name) {
-      this.$refs[name].validate((valid) => {
+    handleSubmit(params) {
+      console.log(params,'查询参数')
+      this.$refs[params].validate((valid) => {
         if (valid) {
-          this.$Message.success("Success!");
+          this.$Message.success("Success!")
         } else {
-          this.$Message.error("Fail!");
+          this.$Message.error("Fail!")
         }
-      });
+      })
+      //查询之后调用重置方法，清空输入框数据
+      this.handleReset()
     },
+    //重置方法，清空输入框的数据
     handleReset(name) {
-      this.formInline.value = "";
-      this.ormInline.value1 = "";
-      console.log("表格选项", name);
+      this.formInline.value = ""
+      this.formInline.value1 = ""
+      console.log("表格选项", name)
     },
-    showEducation(index){
-      console.log('表格的信息',index);
+    //导出方法
+    handleExport(name){
+      console.log("表格选项", name)
     },
+    // showEducation(index){
+    //   console.log('表格的信息',index)
+    // },
+
+    //展示详情弹窗
     showDetail(index){
-      console.log('表格的信息',index);
+      console.log('表格的信息',index)
     }
   },
-};
+}
 </script>
 
 <style lang="less" scoped src='@/assets/style/user.less'>

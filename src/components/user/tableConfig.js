@@ -7,6 +7,7 @@ export default (ctx) => {
                     return h('checkbox');
                 },
                 algin: 'center',
+                tooltip: true,
                 width: 60,
                 render: (h) => {
                     return h('checkbox', {
@@ -21,58 +22,85 @@ export default (ctx) => {
                 title: "姓名",
                 key: "name",
                 algin: 'center',
-                width: 150
+                width: 150,
+                tooltip: true,
             },
             {
                 title: "身份证号码",
-                key: "age",
-                width: 180
+                key: "cardNumber",
+                width: 180,
+                tooltip: true,
             },
             {
                 title: "联系方式",
-                key: "address",
-                width: 180
+                key: "phoneNum",
+                width: 180,
+                tooltip: true,
             },
             {
                 title: "骑手状态",
-                key: "address",
+                key: "personStatus",
+                tooltip: true,
             },
             {
                 title: "骑手类型",
-                key: "address",
+                key: "personType",
+                tooltip: true,
             },
             {
                 title: "平台名称",
-                key: "address",
-                width: 250
+                key: "platformName",
+                width: 250,
+                tooltip: true,
             },
             {
                 title: "码类型",
-                key: "address",
+                key: "codeType",
+                width:100,
+                render: (h, params) => {
+                    let src = '';
+                    if(params.index%2 === 0){
+                        src = require('@/assets/img/u199.png');
+                    }else{
+                        src = require('@/assets/img/u194.png')
+                    }
+                    return h('div', [
+                        h('img', {
+                            attrs: {
+                                src:src,
+                            },
+                            style: {
+                                width: '40px',
+                                height:'40px',
+                            },
+                        }),
+                    ])
+                }
             },
             {
                 title: "宣教时间",
-                key: "address",
+                key: "eduTime",
+                tooltip: true,
             },
             {
                 title: "操作",
                 key: "address",
                 render: (h, params) => {
                     return h('div', [
-                        h('Button', {
-                            props: {
-                                type: 'primary',
-                                // size: 'small'
-                            },
-                            style: {
-                                marginRight: '15px'
-                            },
-                            on: {
-                                click: () => {
-                                    ctx.showEducation(params.row)
-                                }
-                            }
-                        }, '宣教'),
+                        // h('Button', {
+                        //     props: {
+                        //         type: 'primary',
+                        //         // size: 'small'
+                        //     },
+                        //     style: {
+                        //         marginRight: '15px'
+                        //     },
+                        //     on: {
+                        //         click: () => {
+                        //             ctx.showEducation(params.row)
+                        //         }
+                        //     }
+                        // }, '宣教'),
                         h('Button', {
                             props: {
                                 type: 'primary',
@@ -90,73 +118,126 @@ export default (ctx) => {
         ],
         tableDataList: [
             {
-                name: "John Brown",
-                age: 4128032032321222,
-                address: "18212122657",
-                date: "2016-10-03",
+                name: "张珊",
+                sex:'男',
+                cardNumber:'4128032032321222',
+                phoneNum:'18212122657',
+                personStatus:'在岗',
+                personType:'直签',
+                platformName:'达达快送',
+                codeSrc:'@/assets/img',
+                eduTime: "2021-06-18",
             },
             {
-                name: "Jim Green",
-                age: 24,
-                address: "London No. 1 Lake Park",
-                date: "2016-10-01",
-            },
-            {
-                name: "Joe Black",
-                age: 30,
-                address: "Sydney No. 1 Lake Park",
-                date: "2016-10-02",
-            },
-            {
-                name: "Jon Snow",
-                age: 26,
-                address: "Ottawa No. 2 Lake Park",
-                date: "2016-10-04",
-            }, {
-                name: "Jon Snow",
-                age: 26,
-                address: "Ottawa No. 2 Lake Park",
-                date: "2016-10-04",
-            }, {
-                name: "Jon Snow",
-                age: 26,
-                address: "Ottawa No. 2 Lake Park",
-                date: "2016-10-04",
-            }, {
-                name: "Jon Snow",
-                age: 26,
-                address: "Ottawa No. 2 Lake Park",
-                date: "2016-10-04",
-            }, {
-                name: "Jon Snow",
-                age: 26,
-                address: "Ottawa No. 2 Lake Park",
-                date: "2016-10-04",
-            }, {
-                name: "Jon Snow",
-                age: 26,
-                address: "Ottawa No. 2 Lake Park",
-                date: "2016-10-04",
-            }, {
-                name: "Jon Snow",
-                age: 26,
-                address: "Ottawa No. 2 Lake Park",
-                date: "2016-10-04",
-            }, {
-                name: "Jon Snow",
-                age: 26,
-                address: "Ottawa No. 2 Lake Park",
-                date: "2016-10-04",
-            }, {
-                name: "Jon Snow",
-                age: 26,
-                address: "Ottawa No. 2 Lake Park",
-                date: "2016-10-04",
-            }, {
-                name: "Jon Snow",
-                age: 26,
-                address: "Ottawa No. 2 Lake Park",
-                date: "2016-10-04",
+                name: "张珊",
+                sex:'男',
+                cardNumber:'4128032032321222',
+                phoneNum:'18212122657',
+                personStatus:'在岗',
+                personType:'直签',
+                platformName:'达达快送',
+                codeSrc:'@/assets/img',
+                eduTime: "2021-06-18",
+            },{
+                name: "张珊",
+                sex:'男',
+                cardNumber:'4128032032321222',
+                phoneNum:'18212122657',
+                personStatus:'在岗',
+                personType:'直签',
+                platformName:'达达快送',
+                codeSrc:'@/assets/img',
+                eduTime: "2021-06-18",
+            },{
+                name: "张珊",
+                sex:'男',
+                cardNumber:'4128032032321222',
+                phoneNum:'18212122657',
+                personStatus:'在岗',
+                personType:'直签',
+                platformName:'达达快送',
+                codeSrc:'@/assets/img',
+                eduTime: "2021-06-18",
+            },{
+                name: "张珊",
+                sex:'男',
+                cardNumber:'4128032032321222',
+                phoneNum:'18212122657',
+                personStatus:'在岗',
+                personType:'直签',
+                platformName:'达达快送',
+                codeSrc:'@/assets/img',
+                eduTime: "2021-06-18",
+            },{
+                name: "张珊",
+                sex:'男',
+                cardNumber:'4128032032321222',
+                phoneNum:'18212122657',
+                personStatus:'在岗',
+                personType:'直签',
+                platformName:'达达快送',
+                codeSrc:'@/assets/img',
+                eduTime: "2021-06-18",
+            },{
+                name: "张珊",
+                sex:'男',
+                cardNumber:'4128032032321222',
+                phoneNum:'18212122657',
+                personStatus:'在岗',
+                personType:'直签',
+                platformName:'达达快送',
+                codeSrc:'@/assets/img',
+                eduTime: "2021-06-18",
+            },{
+                name: "张珊",
+                sex:'男',
+                cardNumber:'4128032032321222',
+                phoneNum:'18212122657',
+                personStatus:'在岗',
+                personType:'直签',
+                platformName:'达达快送',
+                codeSrc:'@/assets/img',
+                eduTime: "2021-06-18",
+            },{
+                name: "张珊",
+                sex:'男',
+                cardNumber:'4128032032321222',
+                phoneNum:'18212122657',
+                personStatus:'在岗',
+                personType:'直签',
+                platformName:'达达快送',
+                codeSrc:'@/assets/img',
+                eduTime: "2021-06-18",
+            },{
+                name: "张珊",
+                sex:'男',
+                cardNumber:'4128032032321222',
+                phoneNum:'18212122657',
+                personStatus:'在岗',
+                personType:'直签',
+                platformName:'达达快送',
+                codeSrc:'@/assets/img',
+                eduTime: "2021-06-18",
+            },{
+                name: "张珊",
+                sex:'男',
+                cardNumber:'4128032032321222',
+                phoneNum:'18212122657',
+                personStatus:'在岗',
+                personType:'直签',
+                platformName:'达达快送',
+                codeSrc:'@/assets/img',
+                eduTime: "2021-06-18",
+            },{
+                name: "张珊",
+                sex:'男',
+                cardNumber:'4128032032321222',
+                phoneNum:'18212122657',
+                personStatus:'在岗',
+                personType:'直签',
+                platformName:'达达快送',
+                codeSrc:'@/assets/img',
+                eduTime: "2021-06-18",
             }
         ]
     }

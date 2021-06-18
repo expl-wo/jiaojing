@@ -3,8 +3,8 @@
     <div class="title">武汉交警警企共建平台</div>
     <div class="tabBox">
       <router-link to="/" class="tab">首页</router-link>
-      <router-link to="detail" class="tab">码图</router-link>
-      <router-link to="user" class="tab">个人码</router-link>
+      <router-link to="user" class="tab">码图</router-link>
+      <router-link to="detail" class="tab">个人码</router-link>
     </div>
     <div class="timeBox">
       <span>{{ nowDate }}</span>
@@ -54,7 +54,7 @@ header {
   height: 60px;
   font-weight: bolder;
   font-size: 20px;
-  background-color: #0a3346;
+  background-color: #07112d;
   line-height: 60px;
   text-align: center;
   .title {
