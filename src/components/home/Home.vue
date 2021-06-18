@@ -30,7 +30,7 @@
         </div>
         <div class="bottomBox">
           <h2>企业五色图</h2>
-          <div class="keyPeopleEcharts"></div>
+          <div class="fiveColorEcharts"></div>
         </div>
       </div>
       <div class="rightBox">
@@ -64,8 +64,6 @@ export default {
   },
   data() {
     return {
-      //当前的步骤
-      current: 0,
     };
   },
   methods: {
@@ -78,13 +76,13 @@ export default {
       }, 1000);
     },
     keyPeopleEcharts() {
-      let keyPeople = this.$echarts.init(
-        document.getElementsByClassName("keyPeopleEcharts")[0]
+      let fiveColorEcharts = this.$echarts.init(
+        document.getElementsByClassName("fiveColorEcharts")[0]
       );
-      keyPeople.setOption(echartConfig.colorShow);
-      keyPeople.setOption({ title: { text: "新标题" } });
-
-      console.log(keyPeople, 222);
+      // keyPeople.setOption(echartConfig.colorShow);
+      fiveColorEcharts.setOption(echartConfig.fiveColor);
+      // fiveColorEcharts.setOption({ title: { text: "新标题" } });
+      console.log(fiveColorEcharts, 222);
     },
     lineEcharts() {
       let lineEcharts = this.$echarts.init(

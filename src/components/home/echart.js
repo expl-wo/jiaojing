@@ -1,5 +1,66 @@
 
 export default {
+    fiveColor: {
+        title:{
+            text:'数量/个',
+            textStyle:{
+                fontSize: 18,
+                fontWeight: 'bolder',
+                color: '#fff'
+            }
+        },
+        legend: {
+            show: true,
+            orient: 'horizontal',
+            data: ['黑色', '红色', '橙色', '黄色', '绿色'],
+            x: 'center',
+            y: 'top'
+        },
+        xAxis: {
+            type: 'category',
+            data: ['黑色', '红色', '橙色', '黄色', '绿色']
+        },
+        yAxis: {
+            type: 'value',
+            nameTextStyle:{
+                color: '#fff'
+            }
+        },
+        series: [
+            {
+                barWidth: '40',
+                data: [
+                    {
+                        value: 26,
+                        itemStyle: {
+                            color: '#000',
+                        },
+                    }, {
+                        value: 36,
+                        itemStyle: {
+                            width: 50,
+                            color: '#ff0000'
+                        }
+                    }, {
+                        value: 125,
+                        itemStyle: {
+                            color: '#ff9900'
+                        }
+                    }, {
+                        value: 139,
+                        itemStyle: {
+                            color: '#ffff00'
+                        }
+                    }, {
+                        value: 180,
+                        itemStyle: {
+                            color: '#00ff00'
+                        }
+                    }],
+                type: 'bar'
+            }
+        ]
+    },
     colorShow: {
         title: {
             text: '五色图',

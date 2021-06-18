@@ -1,10 +1,10 @@
 #home{
     color:#fff;
     overflow: hidden;
-    
+    background-color: #07112d;
     .content{
         width: 100%;
-        background-color: #cc85d9;
+        background-color: #07112d;
         position: absolute;
         top: 60px;
         bottom: 0px;
@@ -14,7 +14,7 @@
             width: 24%;
             height: 100%;
             float: left;
-            background-color: yellowgreen;
+            background-color: rgba(21, 52, 102, 1);
             .showContent{
                 margin:0 0 10px 20px;
                 box-sizing: border-box;
@@ -33,6 +33,8 @@
             height: 100%;
             float: left;
             background-color: greenyellow;
+            border-left:1px solid rgba(15, 91, 125, 1);
+            border-right:1px solid rgba(15, 91, 125, 1);
             .topBox{
                 height: 40%;
                 background-color: #cc85d9;
@@ -40,20 +42,14 @@
             .bottomBox{
                 height: 60%;
                 background-color: aquamarine;
-                .keyPeopleEcharts{
-                    width: 80%;
-                    height: 400px;
+                position: relative;
+                .fiveColorEcharts{
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 300px;
                     margin: 0 auto;
-                    // margin-left: 33px;
-                    // margin-top: 37px;
-                    box-sizing: border-box;
-                }
-                .lineEcharts{
-                    width: 200px;
-                    height: 200px;
-                    // margin-left: 33px;
-                    // margin-top: 37px;
-                    box-sizing: border-box;
                 }
             }
         }
@@ -62,6 +58,7 @@
             float: left;
             height: 100%;
             background-color: aqua;
+            overflow: hidden;
             .showContent{
                 margin:0 0 20px 20px;
                 height: 25%;
