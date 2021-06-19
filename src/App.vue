@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import DoorPage from './components/index.vue' 
 import Home from "./components/home/Home"
 import Detail from "./components/detail/Detail"
 import User from "./components/user/User"
@@ -21,7 +22,8 @@ export default {
   components: {
     Home,
     Detail,
-    User
+    User,
+    DoorPage
   }
 };
 </script>

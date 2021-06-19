@@ -3,9 +3,10 @@
     <header>
       <div class="title">武汉交警警企共建平台</div>
       <div class="tabBox">
-        <router-link to="/" class="tab">首页</router-link>
+        <router-link to="/" class="tab">门户</router-link>
+        <router-link to="/home" class="tab">首页</router-link>
         <router-link to="user" class="tab">码图</router-link>
-        <router-link to="" class="tab" @click="showTipModal">机动车</router-link>
+        <span class="tab" @click="showTipModal">机动车</span>
       </div>
       <div class="timeBox">
         <span>{{ nowDate }}</span>
@@ -47,6 +48,9 @@ export default {
   mounted() {
     this.currentTime();
   },
+  beforeDestoyed(){
+    clearInterval();
+  }
 };
 </script>
 
