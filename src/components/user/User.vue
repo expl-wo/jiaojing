@@ -27,7 +27,11 @@
               />
             </FormItem>
             <FormItem prop="password">
-              <Select v-model="formInline.value1" style="width: 100px" placeholder='骑手类型'>
+              <Select
+                v-model="formInline.value1"
+                style="width: 100px"
+                placeholder="骑手类型"
+              >
                 <Option
                   v-for="item in personTypeList"
                   :value="item.value"
@@ -44,7 +48,11 @@
               />
             </FormItem>
             <FormItem prop="password">
-              <Select v-model="formInline.value1" style="width: 120px" placeholder='码类型'>
+              <Select
+                v-model="formInline.value1"
+                style="width: 120px"
+                placeholder="码类型"
+              >
                 <Option
                   v-for="item in codeTypeList"
                   :value="item.value"
@@ -53,7 +61,7 @@
                 >
               </Select>
             </FormItem>
-            <FormItem prop="password">
+            <!-- <FormItem prop="password">
              <Select v-model="formInline.value1" style="width: 120px" placeholder='宣教时间'>
                 <Option
                   v-for="item in educationTimeList"
@@ -72,7 +80,7 @@
                   >{{ item.label }}</Option
                 >
               </Select>
-            </FormItem>
+            </FormItem> -->
             <FormItem>
               <Button type="primary" @click="handleSubmit('formInline')"
                 >查询</Button
@@ -98,28 +106,46 @@
         <Page :total="100" show-sizer />
       </div>
     </footer>
+
+    <Modal
+      v-model="isShowDetailModal"
+      title="详情"
+      @on-ok="ok"
+      @on-cancel="cancel"
+      width='1000'
+    >
+      <p>详情信息</p>
+      <p>详情信息</p>
+      <p>详情信息</p>
+      <p>详情信息</p>
+      <p>详情信息</p>
+      <p>详情信息</p>
+      <p>详情信息</p>
+      <p>详情信息</p>
+    </Modal>
   </div>
 </template>
 <script>
-import Head from "../header.vue"
-import tableConfig from "./tableConfig.js"
+import Head from "../header.vue";
+import tableConfig from "./tableConfig.js";
 export default {
   components: {
     Head,
   },
   mounted() {
-    console.log(tableConfig.tableDataList, tableConfig.tableHeadConfig)
+    console.log(tableConfig.tableDataList, tableConfig.tableHeadConfig);
   },
   data() {
-    let tableCon = tableConfig(this)
+    let tableCon = tableConfig(this);
     return {
+      isShowDetailModal: false,
       columns1: tableCon.tableHeadConfig,
       data1: tableCon.tableDataList,
       //输入框的值
       value: "",
       //骑手类型的值
-      model1:'',
-      model2:'',
+      model1: "",
+      model2: "",
       personTypeList: [
         {
           value: "0",
@@ -134,7 +160,7 @@ export default {
           label: "Sydney",
         },
       ],
-      codeTypeList:[
+      codeTypeList: [
         {
           value: "New York",
           label: "码类型",
@@ -148,8 +174,8 @@ export default {
           label: "Sydney",
         },
       ],
-      educationTimeList:[],
-      educationGradeList:[],
+      educationTimeList: [],
+      educationGradeList: [],
       formInline: {
         value1: "",
         value: "",
@@ -176,42 +202,51 @@ export default {
           },
         ],
       },
-    }
+    };
   },
 
   methods: {
     handleSubmit(params) {
-      console.log(params,'查询参数')
+      console.log(params, "查询参数");
       this.$refs[params].validate((valid) => {
         if (valid) {
-          this.$Message.success("Success!")
+          this.$Message.success("Success!");
         } else {
-          this.$Message.error("Fail!")
+          this.$Message.error("Fail!");
         }
-      })
+      });
       //查询之后调用重置方法，清空输入框数据
-      this.handleReset()
+      this.handleReset();
     },
     //重置方法，清空输入框的数据
     handleReset(name) {
-      this.formInline.value = ""
-      this.formInline.value1 = ""
-      console.log("表格选项", name)
+      this.formInline.value = "";
+      this.formInline.value1 = "";
+      console.log("表格选项", name);
     },
     //导出方法
-    handleExport(name){
-      console.log("表格选项", name)
+    handleExport(name) {
+      console.log("表格选项", name);
     },
     // showEducation(index){
     //   console.log('表格的信息',index)
     // },
 
     //展示详情弹窗
-    showDetail(index){
-      console.log('表格的信息',index)
-    }
+    showDetail(index) {
+      this.isShowDetailModal = true;
+      console.log("表格的信息", index);
+    },
+    //详情弹窗确认按钮事件
+    ok() {
+      this.$Message.info("Clicked ok");
+    },
+    //取消关闭弹窗
+    cancel() {
+      this.$Message.info("Clicked cancel");
+    },
   },
-}
+};
 </script>
 
 <style lang="less" scoped src='@/assets/style/user.less'>

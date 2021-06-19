@@ -77,11 +77,11 @@ export default (ctx) => {
                     ])
                 }
             },
-            {
-                title: "宣教时间",
-                key: "eduTime",
-                tooltip: true,
-            },
+            // {
+            //     title: "宣教时间",
+            //     key: "eduTime",
+            //     tooltip: true,
+            // },
             {
                 title: "操作",
                 key: "address",

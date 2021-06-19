@@ -15,33 +15,136 @@
             height: 100%;
             float: left;
             background-color: rgba(21, 52, 102, 1);
+            box-sizing: border-box;
+            i{
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: aqua;
+                margin-right: 10px;
+            }
             .showContent{
                 margin:0 0 10px 20px;
                 box-sizing: border-box;
-                height: 18%;
+                height: 10%;
                 .title{
                     font-size: 18px;
                     font-weight: bolder;
+                    margin-bottom: 10px;
+                }
+                
+            }
+            .showContent:first-child{
+                height: 32%;
+                margin-top: 30px;
+                .leftChartBox,.rightChartBox{
+                    float: left;
+                    width: 50%;
+                    height: 100%;
+                    .panelChartLeft,.panelChartRight{
+                        width: 300px;
+                        height: 260px;
+                    }
                 }
             }
-            .showContent:nth-child(1){
-                margin-top: 30px;
+            .showContent:nth-child(2){
+                height: 14%;
+                .personTypeCount{
+                    margin-top: 10px;
+                    div{
+                        width: 120px;
+                        height: 80px;
+                        border: 1px solid aqua;
+                        float: left;
+                        margin-right: 100px;
+                        text-align: center;
+                        span{
+                            display: block;
+                            color: aqua;
+                        }
+                        span:first-child{
+                            margin-top: 20px;
+                        }
+                    }
+                    div:last-child{
+                        margin-right: 0;
+                    }
+                }
+            }
+            .showContent:nth-child(3){
+                height: 8%;
+                .blackListDetail{
+                    // i{
+                    //     display: inline-block;
+                    //     width: 10px;
+                    //     height: 10px;
+                    //     border-radius: 50%;
+                    //     background-color: aqua;
+                    //     margin-right: 10px;
+                    // }
+                    .blackListTotal,.blackListCount{
+                        float: left;
+                        width: 50%;
+                    }
+                    p{
+                        text-indent: 20px;
+                        margin-top: 10px;
+                        span{
+                            color: red;
+                        }
+                    }
+                }
+            }
+            .showContent:last-child{
+                height: 40%;
+                .detailLeft{
+                    float: left;
+                    width: 50%;
+                }
+                .detailRight{
+                    float: left;
+                    width:50%;
+                }
+                ul{
+                    height: 100%;
+                    li{
+                        width: 80%;
+                        height: 32px;
+                        line-height: 32px;
+                        margin-bottom: 4px;
+                        font-size: 16px;
+                        font-weight: bolder;
+                        background-color: black;
+                        span:first-child{
+                            float: left;
+                        }
+                        span:last-child{
+                            float: right;
+                        }
+                    }
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+                }
             }
         }
         .middleBox{
+            background-color: rgba(21, 52, 102, 1);
             width: 52%;
             height: 100%;
             float: left;
-            background-color: greenyellow;
+            text-align: center;
+            // background-color: greenyellow;
             border-left:1px solid rgba(15, 91, 125, 1);
             border-right:1px solid rgba(15, 91, 125, 1);
             .topBox{
                 height: 40%;
-                background-color: #cc85d9;
+                // background-color: #cc85d9;
             }
             .bottomBox{
                 height: 60%;
-                background-color: aquamarine;
+                // background-color: aquamarine;
                 position: relative;
                 .fiveColorEcharts{
                     position: absolute;
@@ -54,10 +157,11 @@
             }
         }
         .rightBox{
+            background-color: rgba(21, 52, 102, 1);
             width: 24%;
             float: left;
             height: 100%;
-            background-color: aqua;
+            // background-color: aqua;
             overflow: hidden;
             .showContent{
                 margin:0 0 20px 20px;

@@ -5,7 +5,7 @@
       <div class="tabBox">
         <router-link to="/" class="tab">首页</router-link>
         <router-link to="user" class="tab">码图</router-link>
-        <router-link to="detail" class="tab">个人码</router-link>
+        <router-link to="" class="tab" @click="showTipModal">机动车</router-link>
       </div>
       <div class="timeBox">
         <span>{{ nowDate }}</span>
@@ -40,9 +40,9 @@ export default {
       second = second < 10 ? "0" + second : second; // 如果只有一位，则前面补零
       this.nowDate = `${year}/${month}/${day} ${hour}:${minute}:${second}`;
     },
-    toHome() {},
-    toDetail() {},
-    toUser() {},
+    showTipModal(){
+      window.alert('正在开发中，敬请期待');
+    }
   },
   mounted() {
     this.currentTime();

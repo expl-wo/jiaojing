@@ -5,23 +5,90 @@
       <div class="leftBox">
         <div class="showContent">
           <div class="title">违法事故总览</div>
-          <div class="contentDetail">展示内容</div>
+          <div class="contentDetail">
+            <div class="leftChartBox">
+              <div class="panelChartLeft"></div>
+              <p></p>
+              <p></p>
+            </div>
+            <div class="rightChartBox">
+              <div class="panelChartRight"></div>
+              <p></p>
+              <p></p>
+            </div>
+          </div>
         </div>
         <div class="showContent">
           <div class="title">外卖骑手</div>
-          <div class="contentDetail">展示内容</div>
+          <div class="contentDetail">
+            <p>
+              <i></i>
+              <span>外卖企业数</span>
+              <span>71771</span>
+            </p>
+            <div class="personTypeCount">
+              <div><span>10191</span><span>骑手总数</span></div>
+              <div><span>10191</span><span>专职骑手</span></div>
+              <div><span>10191</span><span>众包骑手</span></div>
+            </div>
+          </div>
         </div>
-        <div class="showContent">
+        <!-- <div class="showContent">
           <div class="title">企业五色图</div>
           <div class="contentDetail">展示内容</div>
-        </div>
+        </div> -->
         <div class="showContent">
           <div class="title">黑名单</div>
-          <div class="contentDetail">展示内容</div>
+          <div class="blackListDetail">
+            <div class="blackListTotal">
+              <i></i>
+              <span>黑名单总数</span>
+              <p><span>123</span></p>
+            </div>
+            <div class="blackListCount">
+              <i></i>
+              <span>黑名单总数</span>
+              <p><span>3</span></p>
+            </div>
+          </div>
         </div>
         <div class="showContent">
-          <div class="title">违法骑手黑榜</div>
-          <div class="contentDetail">展示内容</div>
+          <div class="detailLeft">
+            <div class="title">违法骑手TOP10</div>
+            <div class="contentDetail">
+              <ul>
+                <li><span>王ss(饿了么)</span><span>9</span></li>
+                <li><span>王ss(饿了么)</span><span>9</span></li>
+                <li><span>王ss(饿了么)</span><span>9</span></li>
+                <li><span>王ss(饿了么)</span><span>9</span></li>
+                <li><span>王ss(饿了么)</span><span>9</span></li>
+                <li><span>王ss(饿了么)</span><span>9</span></li>
+                <li><span>王ss(饿了么)</span><span>9</span></li>
+                <li><span>王ss(饿了么)</span><span>9</span></li>
+                <li><span>王ss(饿了么)</span><span>9</span></li>
+                <li><span>王ss(饿了么)</span><span>9</span></li>
+                <li><span>王ss(饿了么)</span><span>9</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="detailRight">
+            <div class="title">事故骑手TOP10</div>
+            <div class="contentDetail">
+              <ul>
+                <li><span>王ss(饿了么)</span><span>9</span></li>
+                <li><span>王ss(饿了么)</span><span>9</span></li>
+                <li><span>王ss(饿了么)</span><span>9</span></li>
+                <li><span>王ss(饿了么)</span><span>9</span></li>
+                <li><span>王ss(饿了么)</span><span>9</span></li>
+                <li><span>王ss(饿了么)</span><span>9</span></li>
+                <li><span>王ss(饿了么)</span><span>9</span></li>
+                <li><span>王ss(饿了么)</span><span>9</span></li>
+                <li><span>王ss(饿了么)</span><span>9</span></li>
+                <li><span>王ss(饿了么)</span><span>9</span></li>
+                <li><span>王ss(饿了么)</span><span>9</span></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
       <div class="middleBox">
@@ -63,8 +130,7 @@ export default {
     Head,
   },
   data() {
-    return {
-    };
+    return {};
   },
   methods: {
     handleProgress() {
@@ -75,27 +141,31 @@ export default {
         }
       }, 1000);
     },
-    keyPeopleEcharts() {
+    fiveColorEcharts() {
       let fiveColorEcharts = this.$echarts.init(
         document.getElementsByClassName("fiveColorEcharts")[0]
       );
       // keyPeople.setOption(echartConfig.colorShow);
       fiveColorEcharts.setOption(echartConfig.fiveColor);
-      // fiveColorEcharts.setOption({ title: { text: "新标题" } });
-      console.log(fiveColorEcharts, 222);
+      // console.log(fiveColorEcharts, 222);
     },
-    lineEcharts() {
-      let lineEcharts = this.$echarts.init(
-        document.getElementsByClassName("lineEcharts")[0]
+    panleEcharts() {
+      let leftPanleEcharts = this.$echarts.init(
+        document.getElementsByClassName("panelChartLeft")[0]
       );
-      lineEcharts.setOption(echartConfig.line);
+
+      let rightPanelChart = this.$echarts.init(
+        document.getElementsByClassName("panelChartRight")[0]
+      );
+      leftPanleEcharts.setOption(echartConfig.panel);
+      rightPanelChart.setOption(echartConfig.panel);
+      console.log(leftPanleEcharts,222);
     },
   },
   mounted() {
     console.log("options", echartConfig);
-    // this.lineEcharts();
-    this.keyPeopleEcharts();
-    // this.handleProgress();
+    this.panleEcharts();
+    this.fiveColorEcharts();
   },
   beforeDestroy() {
     if (this.formatDate) {
