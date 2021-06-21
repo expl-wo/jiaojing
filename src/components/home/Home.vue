@@ -6,15 +6,25 @@
         <div class="showContent">
           <div class="title">违法事故总览</div>
           <div class="contentDetail">
-            <div class="leftChartBox">
-              <div class="panelChartLeft"></div>
-              <p></p>
-              <p></p>
+            <div class="showContentBox">
+              <img src="@/assets/img/u171.png" alt="" />
+              <p>2021年违法处罚数</p>
+              <p>189202</p>
             </div>
-            <div class="rightChartBox">
-              <div class="panelChartRight"></div>
-              <p></p>
-              <p></p>
+            <div class="showContentBox">
+              <img src="@/assets/img/u171.png" alt="" />
+              <p>2021年违法处罚数</p>
+              <p>189202</p>
+            </div>
+            <div class="showContentBox">
+              <img src="@/assets/img/u171.png" alt="" />
+              <p>2021年违法处罚数</p>
+              <p>189202</p>
+            </div>
+            <div class="showContentBox">
+              <img src="@/assets/img/u171.png" alt="" />
+              <p>2021年违法处罚数</p>
+              <p>189202</p>
             </div>
           </div>
         </div>
@@ -93,10 +103,126 @@
       </div>
       <div class="middleBox">
         <div class="topBox">
-          <h2>个人三色码</h2>
+          <div class="contentDetail">
+            <div class="topTitle">
+              <p>外卖配送骑手三色码</p>
+            </div>
+            <div class="contentLeftBox">
+              <div class="totalCount">
+                <div class="countTitle">红码降黄码累计人数</div>
+                <ul class="showTotal">
+                  <li class="digital">0</li>
+                  <li class="digital">0</li>
+                  <li class="digital">0</li>
+                  <li class="digital">1</li>
+                  <li class="digital">2</li>
+                </ul>
+              </div>
+              <div class="totalCount">
+                <div class="countTitle">黄码降绿码累计人数</div>
+                <ul class="showTotal">
+                  <li class="digital">0</li>
+                  <li class="digital">0</li>
+                  <li class="digital">0</li>
+                  <li class="digital">1</li>
+                  <li class="digital">2</li>
+                </ul>
+              </div>
+              <div class="totalCount">
+                <div class="countTitle">红码降绿码累计人数</div>
+                <ul class="showTotal">
+                  <li class="digital">0</li>
+                  <li class="digital">0</li>
+                  <li class="digital">0</li>
+                  <li class="digital">1</li>
+                  <li class="digital">2</li>
+                </ul>
+              </div>
+            </div>
+            <div class="contentMiddleBox"></div>
+            <div class="contentRightBox"></div>
+          </div>
+          <div class="contentDetail">
+            <div class="topTitle">
+              <p>外卖配送骑手三色码</p>
+            </div>
+            <div class="contentLeftBox">
+              <div class="totalCount">
+                <div class="countTitle">红码降黄码累计人数</div>
+                <ul class="showTotal">
+                  <li class="digital">0</li>
+                  <li class="digital">0</li>
+                  <li class="digital">0</li>
+                  <li class="digital">1</li>
+                  <li class="digital">2</li>
+                </ul>
+              </div>
+              <div class="totalCount">
+                <div class="countTitle">黄码降绿码累计人数</div>
+                <ul class="showTotal">
+                  <li class="digital">0</li>
+                  <li class="digital">0</li>
+                  <li class="digital">0</li>
+                  <li class="digital">1</li>
+                  <li class="digital">2</li>
+                </ul>
+              </div>
+              <div class="totalCount">
+                <div class="countTitle">红码降绿码累计人数</div>
+                <ul class="showTotal">
+                  <li class="digital">0</li>
+                  <li class="digital">0</li>
+                  <li class="digital">0</li>
+                  <li class="digital">1</li>
+                  <li class="digital">2</li>
+                </ul>
+              </div>
+            </div>
+            <div class="contentMiddleBox"></div>
+            <div class="contentRightBox"></div>
+          </div>
         </div>
         <div class="bottomBox">
           <h2>企业五色图</h2>
+          <div class="legend">
+            <div class="itemColor">
+              <i></i>
+              <span>>90分</span>
+            </div>
+            <div class="itemColor">
+              <i></i>
+              <span>70-90分</span>
+            </div>
+            <div class="itemColor">
+              <i></i>
+              <span>40-69分</span>
+            </div>
+            <div class="itemColor">
+              <i></i>
+              <span>20-39分</span>
+            </div>
+            <div class="itemColor">
+              <i></i>
+              <span>&lt;20分</span>
+            </div>
+          </div>
+          <div class="tableWrap">
+            <ul class="thead">
+              <li>TOP</li>
+              <li>企业</li>
+              <li>积分</li>
+              <li>站点数</li>
+              <li>五色图</li>
+              <li>红码</li>
+              <li>黄码</li>
+              <li>绿码</li>
+              <li>宣教总积分</li>
+              <li>码数量/个</li>
+            </ul>
+            <ul class="tr"></ul>
+            <ul class="tr"></ul>
+            <ul class="tr"></ul>
+          </div>
           <div class="fiveColorEcharts"></div>
         </div>
       </div>
@@ -130,7 +256,33 @@ export default {
     Head,
   },
   data() {
-    return {};
+    return {
+      columns1: [
+        {
+          title: "Name",
+          key: "name",
+          height:'50px'
+        },
+        {
+          title: "Age",
+          key: "age",
+          height:'50px'
+        },
+        {
+          title: "Address",
+          key: "address",
+          height:'50px'
+        },
+      ],
+      data1: [
+        {
+          name: "John Brown",
+          age: 18,
+          address: "New York No. 1 Lake Park",
+          date: "2016-10-03",
+        }
+      ],
+    };
   },
   methods: {
     handleProgress() {
@@ -149,22 +301,22 @@ export default {
       fiveColorEcharts.setOption(echartConfig.fiveColor);
       // console.log(fiveColorEcharts, 222);
     },
-    panleEcharts() {
-      let leftPanleEcharts = this.$echarts.init(
-        document.getElementsByClassName("panelChartLeft")[0]
-      );
+    // panleEcharts() {
+    //   let leftPanleEcharts = this.$echarts.init(
+    //     document.getElementsByClassName("panelChartLeft")[0]
+    //   );
 
-      let rightPanelChart = this.$echarts.init(
-        document.getElementsByClassName("panelChartRight")[0]
-      );
-      leftPanleEcharts.setOption(echartConfig.panel);
-      rightPanelChart.setOption(echartConfig.panel);
-      console.log(leftPanleEcharts,222);
-    },
+    //   let rightPanelChart = this.$echarts.init(
+    //     document.getElementsByClassName("panelChartRight")[0]
+    //   );
+    //   leftPanleEcharts.setOption(echartConfig.panel);
+    //   rightPanelChart.setOption(echartConfig.panel);
+    //   console.log(leftPanleEcharts,222);
+    // },
   },
   mounted() {
     console.log("options", echartConfig);
-    this.panleEcharts();
+    // this.panleEcharts();
     this.fiveColorEcharts();
   },
   beforeDestroy() {

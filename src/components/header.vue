@@ -5,8 +5,9 @@
       <div class="tabBox">
         <router-link to="/" class="tab">门户</router-link>
         <router-link to="/home" class="tab">首页</router-link>
-        <router-link to="user" class="tab">码图</router-link>
-        <span class="tab" @click="showTipModal">机动车</span>
+        <router-link to="/user" class="tab">码图</router-link>
+        <router-link to="/auto" class="tab">机动车</router-link>
+        <!-- <span class="tab" @click="showTipModal">机动车</span> -->
       </div>
       <div class="timeBox">
         <span>{{ nowDate }}</span>
@@ -66,10 +67,10 @@ export default {
   .title {
     width: 15%;
     float: left;
-    margin-left: 20px;
+    padding-left: 20px;
   }
   .tabBox {
-    width: 60%;
+    width: 70%;
     float: left;
     .tab {
       padding: 20px;
@@ -79,9 +80,9 @@ export default {
     }
   }
   .timeBox {
-    width: 15%;
+    width: 13%;
     float: right;
-    margin-right: 20px;
+    // margin-right: 20px;
   }
 }
 </style>

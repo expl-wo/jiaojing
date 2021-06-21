@@ -10,7 +10,7 @@
 <script>
 import DoorPage from './components/index.vue' 
 import Home from "./components/home/Home"
-import Detail from "./components/detail/Detail"
+import Auto from './components/auto/Auto'
 import User from "./components/user/User"
 export default {
   name: "App",
@@ -21,7 +21,8 @@ export default {
   },
   components: {
     Home,
-    Detail,
+    // Detail,
+    Auto,
     User,
     DoorPage
   }

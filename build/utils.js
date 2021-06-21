@@ -4,7 +4,7 @@ const config = require('../config')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const packageConfig = require('../package.json')
 
-exports.assetsPath = function(_path) {
+exports.assetsPath = function (_path) {
     const assetsSubDirectory = process.env.NODE_ENV === 'production' ?
         config.build.assetsSubDirectory :
         config.dev.assetsSubDirectory
@@ -12,7 +12,7 @@ exports.assetsPath = function(_path) {
     return path.posix.join(assetsSubDirectory, _path)
 }
 
-exports.cssLoaders = function(options) {
+exports.cssLoaders = function (options) {
     options = options || {}
 
     const cssLoader = {
@@ -28,10 +28,17 @@ exports.cssLoaders = function(options) {
             sourceMap: options.sourceMap
         }
     }
-
+    // 增加代码，px转rem配置（需要将px2remloader添加进loaders数组中）
+    const px2remLoader = {
+        loader: 'px2rem-loader',
+        options: {
+            remUnit: 192,  //根据视觉稿，rem为px的十分之一，1920px  192 rem
+            remPrecision: 3//换算的rem保留几位小数点
+        }
+    }
     // generate loader string to be used with extract text plugin
     function generateLoaders(loader, loaderOptions) {
-        const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader]
+        const loaders = options.usePostCSS ? [cssLoader, postcssLoader, px2remLoader] : [cssLoader , px2remLoader]
 
         if (loader) {
             loaders.push({
@@ -68,7 +75,7 @@ exports.cssLoaders = function(options) {
 }
 
 // Generate loaders for standalone style files (outside of .vue)
-exports.styleLoaders = function(options) {
+exports.styleLoaders = function (options) {
     const output = []
     const loaders = exports.cssLoaders(options)
 

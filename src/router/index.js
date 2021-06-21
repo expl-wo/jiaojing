@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/home/Home'
-import Detail from '@/components/detail/Detail'
+import Auto from '@/components/auto/Auto.vue'
 import User from '@/components/user/User'
 import DoorPage from '@/components/index.vue'
 
@@ -20,9 +20,9 @@ export default new Router({
       component: Home
     },
     {
-      path: '/detail',
-      name: 'detail',
-      component: Detail
+      path: '/auto',
+      name: 'auto',
+      component: Auto
     }, {
       path: '/user',
       name: 'user',

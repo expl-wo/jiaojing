@@ -1,6 +1,6 @@
 <template>
   <div id="doorPage">
-    <p>{{ nowDate }}</p>
+    <p><span>{{ nowDate }}</span></p>
     <h2>XXX企业统一门户</h2>
     <div class="menu">
       <div class="menu1" @click="enterHome">

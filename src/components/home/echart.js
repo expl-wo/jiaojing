@@ -58,7 +58,9 @@ export default {
             },
             axisTick: {
                 show: false
-            }
+            },
+            //y轴的间隔
+            interval:20, 
         },
         series: [
 
@@ -68,32 +70,32 @@ export default {
                 data: [
                     {
                         name: '黑色',
-                        value: 26,
+                        value: 6,
                         itemStyle: {
                             color: '#000',
                         },
                     }, {
                         name: '红色',
-                        value: 36,
+                        value: 12,
                         itemStyle: {
                             width: 50,
                             color: '#ff0000'
                         }
                     }, {
                         name: '橙色',
-                        value: 125,
+                        value: 23,
                         itemStyle: {
                             color: '#ff9900'
                         }
                     }, {
                         name: '黄色',
-                        value: 139,
+                        value: 34,
                         itemStyle: {
                             color: '#ffff00'
                         }
                     }, {
                         name: '绿色',
-                        value: 180,
+                        value: 24,
                         itemStyle: {
                             color: '#00ff00'
                         }
