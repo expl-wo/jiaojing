@@ -229,7 +229,25 @@
       <div class="rightBox">
         <div class="showContent">
           <div class="title">违法事故反馈</div>
-          <div class="contentDetail">展示内容</div>
+          <div class="contentDetail">
+            <div class="leftDateBox">
+              <div class="percentBox">
+                <p><span class="title">反馈率</span></p>
+                <p class="fontSize"><span>29.20%</span></p>
+                <p class="highLight"><span>违法数</span><span>30203</span></p>
+                <p><span>已反馈</span><span>12029</span></p>
+              </div>
+              <div class="percentBox">
+                <p><span class="title">反馈率</span></p>
+                <p><span>29.20%</span></p>
+                <p><span>违法数</span><span>30203</span></p>
+                <p><span>已反馈</span><span>12029</span></p>
+              </div>
+            </div>
+            <div class="rightChartBox">
+              <div><span>图表</span></div>
+            </div>
+          </div>
         </div>
         <div class="showContent">
           <div class="title">趋势分析</div>
