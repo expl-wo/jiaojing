@@ -234,14 +234,14 @@
               <div class="percentBox">
                 <p><span class="title">反馈率</span></p>
                 <p class="fontSize"><span>29.20%</span></p>
-                <p class="highLight"><span>违法数</span><span>30203</span></p>
-                <p><span>已反馈</span><span>12029</span></p>
+                <p class="blueFont"><span>违法数</span><span>30203</span></p>
+                <p class="yellowFont"><span>已反馈</span><span>12029</span></p>
               </div>
               <div class="percentBox">
                 <p><span class="title">反馈率</span></p>
-                <p><span>29.20%</span></p>
-                <p><span>违法数</span><span>30203</span></p>
-                <p><span>已反馈</span><span>12029</span></p>
+                <p class="fontSize"><span>29.20%</span></p>
+                <p class="blueFont"><span>违法数</span><span>30203</span></p>
+                <p class="yellowFont"><span>已反馈</span><span>12029</span></p>
               </div>
             </div>
             <div class="rightChartBox">
@@ -254,12 +254,57 @@
           <div class="contentDetail">展示内容</div>
         </div>
         <div class="showContent">
-          <div class="title">最新骑手事故</div>
-          <div class="contentDetail">展示内容</div>
+          <div class="title">
+            最新骑手事故
+            <div class="moreBtn">more></div>
+          </div>
+          <div class="contentDetail">
+            <ul v-for="(item, index) in DataList" :key="index">
+              <li>
+                <span class="blueFont">{{ item.troubleTime }}</span>
+              </li>
+              <li>
+                <span>{{item.name}}</span>
+              </li>
+              <li><span>{{item.place}}</span></li>
+              <li><span>{{item.type}}</span></li>
+            </ul>
+          </div>
         </div>
         <div class="showContent">
           <div class="title">骑手非现场违法</div>
-          <div class="contentDetail">展示内容</div>
+          <div class="contentDetail">
+            <div class="imgList">
+              <img src="@/assets/img/u110.png" alt="">
+              <div class="messageBox">
+                <span>杭州</span>
+                <span>武汉路</span>
+              </div>
+            </div>
+            <div class="imgList">
+              <img src="@/assets/img/u110.png" alt="">
+              <div class="messageBox">
+                <span>杭州</span>
+                <span>武汉路</span>
+              </div>
+            </div>
+            <div class="imgList">
+              <img src="@/assets/img/u110.png" alt="">
+              <div class="messageBox">
+                <span>杭州</span>
+                <span>武汉路</span>
+              </div>
+            </div>
+            <div class="dotList">
+              <ul>
+                <li><span></span></li>
+                <li><span></span></li>
+                <li><span></span></li>
+                <li><span></span></li>
+                <li><span></span></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -279,17 +324,17 @@ export default {
         {
           title: "Name",
           key: "name",
-          height:'50px'
+          height: "50px",
         },
         {
           title: "Age",
           key: "age",
-          height:'50px'
+          height: "50px",
         },
         {
           title: "Address",
           key: "address",
-          height:'50px'
+          height: "50px",
         },
       ],
       data1: [
@@ -298,7 +343,30 @@ export default {
           age: 18,
           address: "New York No. 1 Lake Park",
           date: "2016-10-03",
-        }
+        },
+      ],
+      DataList: [
+        {
+          troubleTime: "2021-02-21",
+          name: "X灶神(美团)",
+          type: "简易程序事故",
+          place: "文创路口",
+        },{
+          troubleTime: "2021-02-21",
+          name: "X灶神(美团)",
+          type: "简易程序事故",
+          place: "文创路口",
+        },{
+          troubleTime: "2021-02-21",
+          name: "X灶神(美团)",
+          type: "简易程序事故",
+          place: "文创路口",
+        },{
+          troubleTime: "2021-02-21",
+          name: "X灶神(美团)",
+          type: "简易程序事故",
+          place: "文创路口",
+        },
       ],
     };
   },
